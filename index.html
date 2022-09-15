@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=fi, initial-scale=1.0">
-    <title>Assignment 2</title>
+    <title>Fidget</title>
+    <link rel="icon" href="https://static.thenounproject.com/png/1145692-200.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -28,7 +29,6 @@
             const randomCode = "#" + randomNumber.toString(16);
             document.querySelector("#button1").innerText = randomCode;
             document.querySelector("#modbox").style.backgroundColor = randomCode;
-            navigator.clipboard.writeText(randomCode);
         }
         function removeColour() {
             document.getElementById("button1").innerText = "Change Colour";
