@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=fi, initial-scale=1.0">
+    <title>Assignment 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="box" id="modbox">
+    </div>
+    <div class="btns">
+        <button class="btn" id="button1" onclick="changeColour()"> Change Colour</button>
+        <button class="btn" id="button1" onclick="removeColour()"> Remove Colour</button>
+        <button class="btn" id="button2" onclick="changeSize()">Change Size</button>
+        <button class="btn" id="button2" onclick="resetSize()">Reset Size</button>
+        <button class="btn" id="button3" onclick="addImage()">Add Image</button>
+        <button class="btn" id="button4" onclick="removeImage()">Remove Image</button>
+    </div>
+    <script>
+        function changeColour() {
+
+            const randomNumber = Math.floor(Math.random() * 16777275);
+            const randomCode = "#" + randomNumber.toString(16);
+            document.querySelector("#button1").innerText = randomCode;
+            document.querySelector("#modbox").style.backgroundColor = randomCode;
+            navigator.clipboard.writeText(randomCode);
+        }
+        function removeColour() {
+            document.getElementById("button1").innerText = "Change Colour";
+            document.getElementById("modbox").style.backgroundColor = "rgba(0,0,0,0)";
+        }
+        function changeSize() {
+            document.querySelector("#modbox").style.transform = "scale(110%)";
+
+        }
+        function resetSize() {
+            document.querySelector("#modbox").style.transform = "scale(100%)";
+
+        }
+        function addImage() {
+            document.querySelector("#modbox").style.backgroundImage = "url('https://unsplash.it/1000/500')";
+        }
+        function removeImage() {
+            document.querySelector("#modbox").style.backgroundImage = "none";
+        }
+        document.querySelector("body").style.backgroundImage = "url('https://unsplash.it/1000/500')"
+    </script>
+</body>
+
+</html>
